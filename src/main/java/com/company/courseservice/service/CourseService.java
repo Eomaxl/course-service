@@ -2,6 +2,7 @@ package com.company.courseservice.service;
 
 import com.company.courseservice.dao.CourseDao;
 import com.company.courseservice.dto.Course;
+import com.company.courseservice.dto.CourseRequestDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,9 +18,9 @@ public class CourseService {
     private CourseDao courseDao;
 
     //create course object in DB
-    public Course onboardNewCourse(Course course){
-        course.setCourseId(new Random().nextInt(3756));
-        courseDatabase.add(course);
+    public Course onboardNewCourse(CourseRequestDTO courseRequestDTO){
+        courseRequestDTO.setCourseId(new Random().nextInt(3756));
+        courseDatabase.add(courseRequestDTO);
         return course;
     }
 

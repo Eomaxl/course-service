@@ -1,5 +1,6 @@
 package com.company.courseservice.service;
 
+import com.company.courseservice.dao.CourseDao;
 import com.company.courseservice.dto.Course;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,10 @@ import java.util.Random;
 @Service
 public class CourseService {
     private List<Course> courseDatabase = new ArrayList<>();
+
+
+    // H2, DERBY, AeroSpike -> In memory Database
+    private CourseDao courseDao;
 
     //create course object in DB
     public Course onboardNewCourse(Course course){
